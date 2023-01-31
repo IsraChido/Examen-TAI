@@ -1,10 +1,12 @@
 fetch("servicio.json")
     .then(respuesta => respuesta.json())
     .then(datos => {
-        const tabla = document.getElementById("servicio");
+        const ganancias = document.getElementById("p");
+        let tGanancias = 0;
         datos.forEach(item => {
+            let ganancia = (item.preciovta*item.preciocompra)*item.cantidad;
+            tGanancias += ganancia;
             if(item.idcliente%2==0){   
-                let ganancia = (item.preciovta*item.preciocompra)*item.cantidad;
                 servicio.innerHTML += `
                 <tr id="a">
                 <td>${item.codigo}</td>
@@ -17,7 +19,6 @@ fetch("servicio.json")
                 </tr>
                 `;
             } else {
-                let ganancia = (item.preciovta*item.preciocompra)*item.cantidad;
                 servicio.innerHTML += `
                 <tr>
                 <td>${item.codigo}</td>
@@ -31,4 +32,5 @@ fetch("servicio.json")
                 `;
             }
         });
+        p.innerHTML = "<p>Ganancias totales: " + tGanancias + "</p>"; 
     });
