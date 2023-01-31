@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+tr{
+    background-color: aliceblue;
+}
+
+#a{
+    background-color: gray;
+}
+
+section {
+    flex: 100%;
+    background-color: aquamarine;
+    border: 5px dashed rgba(9, 223, 194, 0.952);
+    padding: 20px;
+}
